@@ -6,5 +6,8 @@ import Logoutbtn from "./Header/Logoutbtn";
 import Button from "./Button/Button";
 import Input from "./Input/Input";
 import Section from "./Section/Section";
+import PostCrad from "./PostCrad/PostCrad";
+import LoginPage from "./LoginPage/LoginPage";
+import Signup from "./Signup/Signup";
 
-export { Header, Section, Logoutbtn, Logo, Container, Footer, Button, Input }
+export { Header, Signup, Section, Logoutbtn, Logo, LoginPage, Container, Footer, Button, Input, PostCrad }
