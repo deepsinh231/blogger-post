@@ -13,7 +13,8 @@ export default function LoginPage() {
   const navigate = useNavigate()
   const { register, handleSubmit } = useForm()
   const [Error, setError] = useState("")
-  const logins = async () => {
+
+  const logins = async (data) => {
     setError("")
     try {
       const session = await authService.Login(data)

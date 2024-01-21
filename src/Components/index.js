@@ -9,5 +9,9 @@ import Section from "./Section/Section";
 import PostCrad from "./PostCrad/PostCrad";
 import LoginPage from "./LoginPage/LoginPage";
 import Signup from "./Signup/Signup";
+import Loadear from "./Loadear/Loadear";
+import Protected from "./AuthLayout/AuthLayout";
+import RTE from "./RTE/RTE";
+import PostForm from "./Post-form/PostForm";
 
-export { Header, Signup, Section, Logoutbtn, Logo, LoginPage, Container, Footer, Button, Input, PostCrad }
+export { Header, Signup, Loadear, PostForm, Section, Protected, RTE, Logoutbtn, Logo, LoginPage, Container, Footer, Button, Input, PostCrad }

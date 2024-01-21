@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import authService from "./appwrite/auth";
 import { login, logout } from "./Store/AuthSlice";
 import { Outlet } from "react-router-dom";
-import { Footer, Header } from './Components'
+import { Footer, Header, Loadear } from './Components'
 
 function App() {
   const [Loding, setLoding] = useState(true);
@@ -25,13 +25,13 @@ function App() {
     <div>
       <Header />
       <main >
-        Toodo
-        {/* <Outlet /> */}
+        <Outlet />
       </main>
 
       <Footer />
     </div>
-  ) : null
+  ) :
+    <Loadear />
 }
 
 export default App

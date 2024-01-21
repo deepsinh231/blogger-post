@@ -21,7 +21,7 @@ export class Servie {
                 {
                     title,
                     content,
-                    Img_data,
+                    Img_data,   
                     Status,
                     userid
                 }
@@ -52,7 +52,7 @@ export class Servie {
     }
     async deletePost(slug) {
         try {
-            return this.databases.deleteDocument(
+            await this.databases.deleteDocument(
                 Conf.appwritedatabaseid,
                 Conf.appwritecollectionid,
                 slug
@@ -70,7 +70,7 @@ export class Servie {
                 Conf.appwritecollectionid,
                 slug
             )
-            return true
+
         } catch (error) {
             console.log("Appwite Servie ::getDocument ::error", error);
             return false
@@ -83,7 +83,6 @@ export class Servie {
                 Conf.appwritecollectionid,
                 querys
             )
-            return true
         } catch (error) {
             console.log("Appwite Servie ::listDoumnet ::error", error);
             return false
@@ -116,10 +115,16 @@ export class Servie {
         }
     }
     getfileProview(fileID) {
-        return this.bucket.getFilePreview(
-            Conf.appwritebucketid,
-            fileID
-        )
+        try {
+            const STA = this.bucket.getFilePreview(
+                Conf.appwritebucketid,
+                fileID
+            )
+            return STA;
+        } catch (error) {
+            console.log("Appwite Servie ::getfileProview ::error", error);
+
+        }
     }
 }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Logoutbtn, Logo, Container } from '../';
 import { useSelector } from 'react-redux';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link, NavLink } from 'react-router-dom';
 
 export default function Header() {
     const authStatus = useSelector((state) => state.auth.status)
@@ -18,8 +18,8 @@ export default function Header() {
             active: !authStatus
         },
         {
-            name: "Singup",
-            slug: "/singup",
+            name: "Signup",
+            slug: "/signup",
             active: !authStatus
         },
         {
@@ -34,7 +34,7 @@ export default function Header() {
         },
     ]
     return (
-        <header className='shadow bg-gray-500'>
+        <header className='py-3 shadow bg-gray-500'>
             <Container>
                 <nav className="flex py-3 justify-between">
                     <div className="mr-4">
@@ -46,10 +46,13 @@ export default function Header() {
                         {nevItem.map((item) =>
                             item.active ? (
                                 <li key={item.name} >
-                                    <button
+                                    <NavLink
                                         onClick={() => navigate(item.slug)}
-                                        className='inline-block px-2 mx-3  py-2 duration-200 hover:bg-blue-100 rounded-full'
-                                    >{item.name}</button>
+                                        className={({ isActive }) =>
+                                            `inline-block px-2 mx-3  py-2 duration-200 hover:bg-blue-100 rounded-full ${isActive ? "bg-blue-100" : ""} `
+                                        }
+                                        to={item.slug}
+                                    >{item.name}</NavLink>
                                 </li>
                             ) : null
                         )}
