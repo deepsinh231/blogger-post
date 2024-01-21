@@ -6,6 +6,8 @@ import { useSelector } from 'react-redux'
 export default function HomePage() {
     const [posts, setposts] = useState([])
     const Loginstatus = useSelector((state) => state.auth.status)
+
+
     useEffect(() => {
         servie.listDoumnet([]).then((posts) => {
             if (posts) {
@@ -47,7 +49,7 @@ export default function HomePage() {
             <Container>
                 <div className="flex flex-wrap">
                     {posts.map((post) => (
-                        <div key={post.$id} className="p-2 w-1/4">
+                        <div key={post.$id} className="p-2 sm:w-full md:w-1/3  lg:w-1/4 ">
                             <PostCrad post={post} />
                         </div>
                     ))}
