@@ -9,4 +9,4 @@ Currently, two official plugins are available:
 "# blogger-post" 
 
 
-<a href="https://blog-post1.netlify.app/">Visit Website Link</a>
+<a href="https://blogger-post.vercel.app">Visit Website Link</a>
